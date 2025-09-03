@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,13 +24,15 @@ namespace VueBugTrackerProject.Classes
 		/// The target project.
 		/// </summary>
 		[Required]
-		public Project Project { get; set; }
+        [DeleteBehavior(DeleteBehavior.NoAction)]
+        public Project Project { get; set; }
 
 		/// <summary>
 		/// The user who is granted access to the project.
 		/// </summary>
 		[Required]
-		public Account Account { get; set; }
+        [DeleteBehavior(DeleteBehavior.NoAction)]
+        public Account Account { get; set; }
 
 		/// <summary>
 		/// What the user can do with the project.

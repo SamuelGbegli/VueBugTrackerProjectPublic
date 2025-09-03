@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -39,6 +40,7 @@ namespace VueBugTrackerProject.Classes
         /// The user that created the bug.
         /// </summary>
         [Required]
+        [DeleteBehavior(DeleteBehavior.NoAction)]
         public Account Creator { get; set; }
 
         /// <summary>
@@ -71,6 +73,7 @@ namespace VueBugTrackerProject.Classes
         /// The project the bug belongs to.
         /// </summary>
         [Required]
+        [DeleteBehavior(DeleteBehavior.NoAction)]
         public Project Project { get; set; }
 
     }

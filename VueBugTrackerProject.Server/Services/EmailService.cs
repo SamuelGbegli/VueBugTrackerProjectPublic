@@ -37,15 +37,25 @@ namespace VueBugTrackerProject.Server.Services
 
             using var client = new SmtpClient();
             {
-                //SMTP client is local IP address
                 /*
                  * SMTP connection code goes here. The connection method may vary depending on the SMRP server you are using.
                  * Please view this page for more information: https://mimekit.net/docs/html/T_MailKit_Net_Smtp_SmtpClient.htm
                  */
 
+                /*
+                 * Uncomment the line below and add the url or IP address of the SMTP server you are using in quoatation marks
+                 */
+                //client.Connect("");
+
+                /*
+                 * The Authenticate function is only necessary if the SMTP client you are using requires authentication with a username
+                 * and password. Uncomment the line below and replace the {username} and {password} fields if you are using authentication.
+                 */
+                //client.Authenticate("{username}", "{password}");
+
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
-            }
+            };
             
         }
 

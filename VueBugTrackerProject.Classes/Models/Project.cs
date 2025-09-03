@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -54,6 +55,7 @@ namespace VueBugTrackerProject.Classes
 		/// The account that created and owns the project.
 		/// </summary>
 		[Required]
+		[DeleteBehavior(DeleteBehavior.NoAction)]
 		public Account Owner { get; set; }
 
 		/// <summary>
@@ -79,11 +81,13 @@ namespace VueBugTrackerProject.Classes
 		/// The project's tags.
 		/// </summary>
 		public List<string> Tags { get; set; } = new List<string>();
-	
-		/// <summary>
-		/// A list of users that can view or edit the project.
-		/// </summary>
-		public List<UserPermission> UserPermissions { get; set; } = new List<UserPermission>();
+
+        /// <summary>
+        /// A list of users that can view or edit the project.
+        /// </summary>
+
+        [DeleteBehavior(DeleteBehavior.Cascade)]
+        public List<UserPermission> UserPermissions { get; set; } = new List<UserPermission>();
 	
 	}
 }

@@ -1,5 +1,6 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VueBugTrackerProject.Classes
 {
@@ -30,16 +31,18 @@ namespace VueBugTrackerProject.Classes
         [Column(TypeName = "datetime2")]
         public DateTime DatePosted { get; set; }
 
-		/// <summary>
-		/// A past comment that is being replied to by the comment.
-		/// </summary>
-		public Comment? CommentReply { get; set; }
+        /// <summary>
+        /// A past comment that is being replied to by the comment.
+        /// </summary>
+        [DeleteBehavior(DeleteBehavior.NoAction)]
+        public Comment? CommentReply { get; set; }
 
 		/// <summary>
 		/// The user that made the comment.
 		/// </summary>
 		[Required]
-		public Account Owner { get; set; }
+        [DeleteBehavior(DeleteBehavior.NoAction)]
+        public Account Owner { get; set; }
 
         /// <summary>
         /// If true, means the comment is an automated message about a
@@ -58,9 +61,10 @@ namespace VueBugTrackerProject.Classes
 		/// </summary>
 		public bool IsCommentReplyDeleted { get; set; }
 
-		/// <summary>
-		/// The bug the comment belongs to.
-		/// </summary>
+        /// <summary>
+        /// The bug the comment belongs to.
+        /// </summary>
+        [DeleteBehavior(DeleteBehavior.NoAction)]
         public Bug Bug { get; set; }
     }
 }
