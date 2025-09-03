@@ -2,7 +2,7 @@
 
 This is a web application I created that allows users to record and track bugs encountered in a software development project. 
 
-If you just want to run the application, please skip to the section with the header "How to run the application".
+Below is a cut-down overview of the project. If you just want to run the application, please skip to the section with the header "How to run the application".
 
 ## Background
 
