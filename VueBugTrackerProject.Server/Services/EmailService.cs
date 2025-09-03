@@ -43,7 +43,7 @@ namespace VueBugTrackerProject.Server.Services
                  */
 
                 /*
-                 * Uncomment the line below and add the url or IP address of the SMTP server you are using in quoatation marks
+                 * Uncomment the line below and add the URL or IP address of the SMTP server you are using in quoatation marks
                  */
                 //client.Connect("");
 
