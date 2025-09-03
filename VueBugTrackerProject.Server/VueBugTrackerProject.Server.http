@@ -1,0 +1,6 @@
+@VueBugTrackerProject.Server_HostAddress = http://localhost:5047
+
+GET {{VueBugTrackerProject.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

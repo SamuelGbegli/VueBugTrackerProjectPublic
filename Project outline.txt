@@ -1,0 +1,69 @@
+﻿As the main purpose of the app is to demonstrate me finding and fixing bugs throughout development,
+I will focus on the minimum steps required to do this
+
+Part 1
+
+Enums
+Backend Models (Account, Project, Bug, Comment, UserPermission, UserIcon) (done)
+Frontend page template (navbar and credits footer) (in progress)
+Controllers (Auth, Account, Project, Bug)
+View models (Account, Project, ProjectPreview, Bug, BugPreview)
+DTOs (User, Project, Bug)
+Pages (Main, Browse (without filter), Registration, Account recovery, password reset, create new project,
+view project, view project bugs, add bug, view bug, credits page, not found)
+Components (Project preview, project form, bug form, registration form, username tag, go back template)
+Page templates (view project, view bug)
+Install the following (Axios, Quasar, Vuelidate, Pinia) 
+
+Part 2
+Controllers (comment, user permissions)
+View models (Comment, UserPermissions)
+DTOs (ProjectFilter, Comment, UserPermission)
+Pages (Browse page (with filter), Project settings, bug comments, bug settings, user profile, user settings, user projects, admin list)
+Templates (User page)
+
+Future plans
+show error message when user goes to project they cannot see
+
+Project Requirements:
+  Landing page (done)
+  Browse page (done)
+  Logging in, Registration and account recovery (all done)
+  navbar (done)
+  Creating new projects (done)
+  Viewing projects (done)
+  Deleting projects (done)
+  Viewing project bugs (done)
+  Adding bugs (done)
+  Editing bugs (done)
+  Viewing bugs (done)
+  Deleting bugs (done)
+  Bug commenting and logging (done)
+  Searching for projects (done)
+  Project settings (done)
+  404 page (done)
+
+
+  Admin only user list page (mostly done)
+  User profile (not done)
+  User projects (not done)
+  User settings (not done)
+
+
+Next steps: add user profile page
+- create user template
+
+
+Noted glitches:
+- If the user logs in, logs out and logs in again, the sidebar remains open
+- It is possible for someone to create an account with all white spaces (e.g., "    ")
+- There is no "valid format" for a user name
+- Form fields show error messages when user types in them for the first time
+- User is logged out when moving to another page and the Backend is disabled
+- Password reset error is briefly visible when valid ID and token is supplied
+- Users are not redirected when logging in while on a page only non-logged in users are supposed to see
+- Log in prompt is briefly visible when accessing a restricted page
+- Page elements do not refresh when logging out
+- No loading control in bug overview page
+- when filter is reset in bug search page, the current filter values are gone
+- user can view project settings page when not the owner
