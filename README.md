@@ -20,6 +20,8 @@ In a Git terminal, navigate to the folder you want to clone the project into and
 
 Alternatively, click on the "Code" button on the top of the page and click on "Download ZIP".
 
+To open the application in Visual Studio, double click on the VueBugTrackerProjectPublic.sln file in File Explorer.
+
 ## Features
 
 Below is a summary of some of the features of the application:
